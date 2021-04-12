@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "username": "testuser",
+            "routineStep": "Makeup Remover and Oil Cleanser",
+            "timeOfDay": "morning",
+            "productId": 1
+        }
+    ],
+    "required": [
+        "routineStep",
+        "timeOfDay",
+        "productId"
+    ],
+    "properties": {
+        "username": {
+            "$id": "#/properties/username",
+            "type": "string",
+            "title": "The username schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "testuser"
+            ]
+        },
+        "routineStep": {
+            "$id": "#/properties/routineStep",
+            "type": "string",
+            "title": "The routineStep schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Makeup Remover and Oil Cleanser"
+            ]
+        },
+        "timeOfDay": {
+            "$id": "#/properties/timeOfDay",
+            "type": "string",
+            "title": "The timeOfDay schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "morning"
+            ]
+        },
+        "productId": {
+            "$id": "#/properties/productId",
+            "type": "integer",
+            "title": "The productId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        }
+    },
+    "additionalProperties": false
+}

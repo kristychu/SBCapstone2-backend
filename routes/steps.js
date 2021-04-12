@@ -200,7 +200,10 @@ router.get(
             allMorningSteps[i].routineStep === savedStep.routineStep &&
             allMorningSteps[i].timeOfDay === savedStep.timeOfDay
         );
-        if (filteredSteps.length > 1) throw Error;
+        if (filteredSteps.length > 1)
+          throw new BadRequestError(
+            `Found multiple saved morning routine steps with same routine step name for user`
+          );
         if (filteredSteps.length === 1) {
           allMorningSteps[i].productId = filteredSteps[0].productId;
           allMorningSteps[i].stepId = filteredSteps[0].id;
@@ -212,7 +215,10 @@ router.get(
             allNightSteps[i].routineStep === savedStep.routineStep &&
             allNightSteps[i].timeOfDay === savedStep.timeOfDay
         );
-        if (filteredSteps.length > 1) throw Error;
+        if (filteredSteps.length > 1)
+          throw new BadRequestError(
+            `Found multiple saved night routine steps with same routine step name for user`
+          );
         if (filteredSteps.length === 1) {
           allNightSteps[i].productId = filteredSteps[0].productId;
           allNightSteps[i].stepId = filteredSteps[0].id;

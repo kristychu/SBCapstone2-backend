@@ -3,7 +3,10 @@
 /** Routes for users. */
 
 const express = require("express");
-const { ensureLoggedInAndCorrectUser } = require("../middleware/auth");
+const {
+  ensureLoggedIn,
+  ensureLoggedInAndCorrectUser,
+} = require("../middleware/auth");
 const User = require("../models/user");
 
 const router = express.Router();
@@ -15,9 +18,8 @@ const router = express.Router();
  * Authorization required: none
  **/
 
-router.get("/", async function (req, res, next) {
+router.get("/", ensureLoggedIn, async function (req, res, next) {
   try {
-    console.log("get all users");
     const users = await User.findAll();
     return res.json({ users });
   } catch (err) {

@@ -19,10 +19,10 @@ class Step {
   static async create(username, { routineStep, timeOfDay, productId }) {
     const duplicateCheck = await db.query(
       `SELECT username,
-                    routine_step AS "routineStep",
-                    time_of_day AS "timeOfDay"
-             FROM step
-             WHERE username = $1 AND routine_step = $2 AND time_of_day = $3`,
+              routine_step AS "routineStep",
+              time_of_day AS "timeOfDay"
+      FROM step
+      WHERE username = $1 AND routine_step = $2 AND time_of_day = $3`,
       [username, routineStep, timeOfDay]
     );
 
@@ -33,12 +33,15 @@ class Step {
 
     const result = await db.query(
       `INSERT INTO step (username,
-                                routine_step,
-                                time_of_day,
-                                product_id)
-            VALUES ($1, $2, $3, $4)
-            RETURNING username, routine_step AS "routineStep", time_of_day AS "timeOfDay",
-                    product_id AS "productId", id AS "stepId"`,
+                        routine_step,
+                        time_of_day,
+                        product_id)
+      VALUES ($1, $2, $3, $4)
+      RETURNING username,
+                routine_step AS "routineStep",
+                time_of_day AS "timeOfDay",
+                product_id AS "productId",
+                id AS "stepId"`,
       [username, routineStep, timeOfDay, productId]
     );
     let step = result.rows[0];
@@ -54,13 +57,13 @@ class Step {
   static async findAll(username) {
     let result = await db.query(
       `SELECT id,
-                        username,
-                        routine_step AS "routineStep",
-                        time_of_day AS "timeOfDay",
-                        product_id AS "productId"
-                FROM step
-                WHERE username = $1
-                ORDER BY time_of_day`,
+              username,
+              routine_step AS "routineStep",
+              time_of_day AS "timeOfDay",
+              product_id AS "productId"
+      FROM step
+      WHERE username = $1
+      ORDER BY time_of_day`,
       [username]
     );
 
@@ -76,13 +79,13 @@ class Step {
 
   static async get(id) {
     const stepRes = await db.query(
-      `SELECT id,
-                            username,
-                            routine_step AS "routineStep",
-                            time_of_day AS "timeOfDay",
-                            product_id AS "productId"
-                    FROM step
-                    WHERE id = $1`,
+      `SELECT id AS "stepId",
+              username,
+              routine_step AS "routineStep",
+              time_of_day AS "timeOfDay",
+              product_id AS "productId"
+      FROM step
+      WHERE id = $1`,
       [id]
     );
 
@@ -114,7 +117,8 @@ class Step {
     const querySql = `UPDATE step 
                       SET ${setCols} 
                       WHERE id = ${stepIdVarIdx}
-                      RETURNING username,
+                      RETURNING id AS "stepId",
+                                username,
                                 routine_step AS "routineStep",
                                 time_of_day AS "timeOfDay",
                                 product_id AS "productId"`;
@@ -134,9 +138,9 @@ class Step {
   static async remove(id) {
     const result = await db.query(
       `DELETE
-           FROM step
-           WHERE id = $1
-           RETURNING id`,
+        FROM step
+        WHERE id = $1
+        RETURNING id`,
       [id]
     );
     const step = result.rows[0];

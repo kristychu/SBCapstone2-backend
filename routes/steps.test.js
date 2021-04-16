@@ -226,7 +226,7 @@ describe("GET /steps/:username/:stepId", function () {
       .set("authorization", `Bearer ${u1Token}`);
     expect(resp.body).toEqual({
       step: {
-        id: testStepIds[0],
+        stepId: testStepIds[0],
         username: "u1",
         routineStep: "Makeup Remover and Oil Cleanser",
         timeOfDay: "morning",
@@ -253,6 +253,7 @@ describe("PATCH /steps/:username/:id", function () {
       .set("authorization", `Bearer ${u1Token}`);
     expect(resp.body).toEqual({
       step: {
+        stepId: testStepIds[1],
         username: "u1",
         routineStep: "Water Based Cleanser",
         timeOfDay: "morning",

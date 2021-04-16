@@ -69,7 +69,7 @@ describe("get", function () {
   test("works", async function () {
     let step = await Step.get(testStepIds[0]);
     expect(step).toEqual({
-      id: testStepIds[0],
+      stepId: testStepIds[0],
       username: "u1",
       routineStep: "Makeup Remover and Oil Cleanser",
       timeOfDay: "morning",
@@ -97,6 +97,7 @@ describe("update", function () {
   test("works", async function () {
     let step = await Step.update(testStepIds[0], updateData);
     expect(step).toEqual({
+      stepId: testStepIds[0],
       username: "u1",
       routineStep: "Makeup Remover and Oil Cleanser",
       timeOfDay: "morning",

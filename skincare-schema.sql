@@ -5,7 +5,7 @@ CREATE TABLE users (
   last_name TEXT NOT NULL,
   email TEXT NOT NULL
     CHECK (position('@' IN email) > 1),
-  profile_img TEXT NOT NULL
+  profile_img TEXT
 );
 
 CREATE TYPE skincare_step AS ENUM (
@@ -18,9 +18,9 @@ CREATE TYPE skincare_step AS ENUM (
   'Sheet Masks',
   'Eye Cream',
   'Moisturizer',
-  'Sun Protection')
+  'Sun Protection');
 
-CREATE TYPE morning_night AS ENUM ('morning', 'night')
+CREATE TYPE morning_night AS ENUM ('morning', 'night');
 
 CREATE TABLE step (
   id SERIAL PRIMARY KEY,

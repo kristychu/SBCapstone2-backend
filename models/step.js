@@ -11,7 +11,7 @@ class Step {
    *
    * data should be { username, routineStep, timeOfDay, productId }
    *
-   * Returns { username, routine_step, time_of_day, product_id }
+   * Returns { id, username, routine_step, time_of_day, product_id }
    *
    * Throws BadRequestError if step already in database.
    * */
@@ -56,7 +56,7 @@ class Step {
 
   static async findAll(username) {
     let result = await db.query(
-      `SELECT id,
+      `SELECT id AS "stepId",
               username,
               routine_step AS "routineStep",
               time_of_day AS "timeOfDay",
@@ -103,7 +103,7 @@ class Step {
    *
    * Data can include: { productId }
    *
-   * Returns {username, routine_step, time_of_day, product_id }
+   * Returns {id, username, routine_step, time_of_day, product_id }
    *
    * Throws NotFoundError if not found.
    */

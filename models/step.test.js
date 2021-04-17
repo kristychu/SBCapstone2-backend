@@ -46,14 +46,14 @@ describe("findAll", function () {
     let steps = await Step.findAll(user1);
     expect(steps).toEqual([
       {
-        id: testStepIds[0],
+        stepId: testStepIds[0],
         username: "u1",
         routineStep: "Makeup Remover and Oil Cleanser",
         timeOfDay: "morning",
         productId: 1,
       },
       {
-        id: testStepIds[1],
+        stepId: testStepIds[1],
         username: "u1",
         routineStep: "Water Based Cleanser",
         timeOfDay: "morning",

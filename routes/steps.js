@@ -63,8 +63,8 @@ router.get(
         savedSteps
       );
       const updatedNightSteps = updateUserStepData(allNightSteps, savedSteps);
-      const allSteps = [updatedMorningSteps, updatedNightSteps];
-      return res.json({ steps: allSteps });
+      const allUpdatedSteps = [updatedMorningSteps, updatedNightSteps];
+      return res.json({ steps: allUpdatedSteps });
     } catch (err) {
       return next(err);
     }

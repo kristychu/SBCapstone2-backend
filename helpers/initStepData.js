@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const { REACT_APP_BASE_URL } = require("./config");
 
 const allMorningSteps = [
   {
@@ -7,7 +7,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-01.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-01.png`,
   },
   {
     stepNumber: 1,
@@ -15,7 +15,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-02.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-02.png`,
   },
   {
     stepNumber: 2,
@@ -23,7 +23,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-03.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-03.png`,
   },
   {
     stepNumber: 3,
@@ -31,7 +31,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-04.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-04.png`,
   },
   {
     stepNumber: 4,
@@ -39,7 +39,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-05.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-05.png`,
   },
   {
     stepNumber: 5,
@@ -47,7 +47,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-06.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-06.png`,
   },
   {
     stepNumber: 6,
@@ -55,7 +55,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-07.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-07.png`,
   },
   {
     stepNumber: 7,
@@ -63,7 +63,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-08.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-08.png`,
   },
   {
     stepNumber: 8,
@@ -71,7 +71,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-09.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-09.png`,
   },
   {
     stepNumber: 9,
@@ -79,7 +79,7 @@ const allMorningSteps = [
     timeOfDay: "morning",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-10.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-10.png`,
   },
 ];
 
@@ -90,7 +90,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-01.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-01.png`,
   },
   {
     stepNumber: 12,
@@ -98,7 +98,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-02.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-02.png`,
   },
   {
     stepNumber: 13,
@@ -106,7 +106,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-03.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-03.png`,
   },
   {
     stepNumber: 14,
@@ -114,7 +114,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-04.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-04.png`,
   },
   {
     stepNumber: 15,
@@ -122,7 +122,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-05.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-05.png`,
   },
   {
     stepNumber: 16,
@@ -130,7 +130,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-06.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-06.png`,
   },
   {
     stepNumber: 17,
@@ -138,7 +138,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-07.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-07.png`,
   },
   {
     stepNumber: 18,
@@ -146,7 +146,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-08.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-08.png`,
   },
   {
     stepNumber: 19,
@@ -154,7 +154,7 @@ const allNightSteps = [
     timeOfDay: "night",
     productId: null,
     stepId: null,
-    image_url: `${BASE_URL}/static/Skincare-Icons-09.png`,
+    image_url: `${REACT_APP_BASE_URL}/static/Skincare-Icons-09.png`,
   },
 ];
 

@@ -5,6 +5,10 @@
 const express = require("express");
 const cors = require("cors");
 
+const corsOptions = {
+  origin: "https://kc-capstone2.herokuapp.com",
+};
+
 const { NotFoundError } = require("./expressError");
 
 const { authenticateJWT } = require("./middleware/auth");
@@ -21,6 +25,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(authenticateJWT);
 
+app.options("*", cors());
 app.use("/static", express.static(path.join(__dirname, "public")));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes);

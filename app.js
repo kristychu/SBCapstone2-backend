@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(authenticateJWT);
 
-app.use(express.static("public"));
+app.use("/static", express.static(path.join(__dirname, "public")));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/steps", stepsRoutes);

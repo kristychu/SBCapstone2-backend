@@ -5,10 +5,6 @@
 const express = require("express");
 const cors = require("cors");
 
-const corsOptions = {
-  origin: "https://kc-capstone2.herokuapp.com",
-};
-
 const { NotFoundError } = require("./expressError");
 
 const { authenticateJWT } = require("./middleware/auth");

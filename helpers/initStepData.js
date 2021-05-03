@@ -1,4 +1,4 @@
-const { REACT_APP_BASE_URL } = require("./config");
+const { REACT_APP_BASE_URL } = require("../config");
 
 const allMorningSteps = [
   {
